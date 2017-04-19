@@ -4,7 +4,7 @@ SCRIPT_PATH="$0"
 SCRIPT_PATH=`readlink -f "$SCRIPT_PATH"`
 BENCH_HOME=`dirname "$SCRIPT_PATH"`/..
 BENCH_HOME=`cd "$BENCH_HOME"; pwd`
-BENCH_CLASSPATH="$BENCH_HOME/lib/*"
+BENCH_CLASSPATH=`ls $BENCH_HOME/lib/* | xargs | tr ' ' ':' `
 
 #Choose JAVA
 if [ -x "$JAVA_HOME/bin/java" ]; then
